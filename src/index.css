@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Advanced Tech Platform Design System */
+
+@layer base {
+  :root {
+    /* Dark Tech Background */
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    /* Advanced Tech Primary - Deep Purple to Blue */
+    --primary: 250 84% 65%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 260 95% 75%;
+    --primary-glow: 270 100% 85%;
+    
+    /* Dark UI Elements */
+    --secondary: 240 5% 14%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Tech Accent - Cyan/Teal */
+    --accent: 180 100% 60%;
+    --accent-foreground: 240 10% 3.9%;
+    --accent-light: 190 100% 70%;
+    
+    /* Status Colors */
+    --success: 160 84% 55%;
+    --warning: 38 92% 60%;
+    --info: 210 100% 70%;
+    --error: 0 84% 65%;
+    
+    /* Dark Cards & UI */
+    --card: 240 6% 10%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 6% 10%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Dark Neutrals */
+    --muted: 240 4% 15%;
+    --muted-foreground: 0 0% 65%;
+    --border: 240 6% 20%;
+    --input: 240 6% 10%;
+    --ring: 250 84% 65%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    /* Sidebar */
+    --sidebar-background: 240 8% 6%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 250 84% 65%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 6% 12%;
+    --sidebar-accent-foreground: 0 0% 90%;
+    --sidebar-border: 240 6% 15%;
+    --sidebar-ring: 250 84% 65%;
+    
+    /* Advanced Design Variables */
+    --radius: 1rem;
+    
+    /* Tech Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(250 84% 65%) 0%, hsl(260 95% 75%) 50%, hsl(270 100% 85%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(180 100% 60%) 0%, hsl(190 100% 70%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(240 10% 3.9%) 0%, hsl(250 20% 12%) 30%, hsl(260 30% 20%) 70%, hsl(270 40% 25%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(240 6% 10%) 0%, hsl(240 8% 15%) 100%);
+    --gradient-tech: linear-gradient(135deg, hsl(250 84% 65% / 0.1) 0%, hsl(180 100% 60% / 0.1) 100%);
+    --gradient-glow: radial-gradient(circle at center, hsl(250 84% 65% / 0.3) 0%, transparent 70%);
+    
+    /* Advanced Shadows */
+    --shadow-tech: 0 8px 32px -8px hsl(250 84% 65% / 0.3), 0 0 0 1px hsl(240 6% 20%);
+    --shadow-glow: 0 0 40px hsl(250 84% 65% / 0.4), 0 0 80px hsl(270 100% 85% / 0.2);
+    --shadow-elegant: 0 4px 24px -4px hsl(240 10% 3.9% / 0.5), 0 8px 64px -12px hsl(250 84% 65% / 0.2);
+    --shadow-card: 0 4px 16px -4px hsl(240 10% 3.9% / 0.4), 0 0 0 1px hsl(240 6% 20%);
+    --shadow-float: 0 8px 40px -8px hsl(240 10% 3.9% / 0.6), 0 0 0 1px hsl(240 6% 25%), 0 0 20px hsl(250 84% 65% / 0.1);
+    
+    /* Smooth Transitions */
+    --transition-all: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    background: hsl(var(--background));
+    background-image: 
+      radial-gradient(circle at 20% 20%, hsl(250 84% 65% / 0.05) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, hsl(180 100% 60% / 0.05) 0%, transparent 50%);
+  }
+  
+  /* Advanced gradient utilities */
+  .bg-gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .bg-gradient-accent {
+    background: var(--gradient-accent);
+  }
+  
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+  
+  .bg-gradient-card {
+    background: var(--gradient-card);
+  }
+  
+  .bg-gradient-tech {
+    background: var(--gradient-tech);
+  }
+  
+  .bg-gradient-glow {
+    background: var(--gradient-glow);
+  }
+  
+  /* Advanced shadow utilities */
+  .shadow-tech {
+    box-shadow: var(--shadow-tech);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .shadow-elegant {
+    box-shadow: var(--shadow-elegant);
+  }
+  
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+  
+  .shadow-float {
+    box-shadow: var(--shadow-float);
+  }
+  
+  /* Advanced animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite alternate;
+  }
+  
+  .animate-tech-grid {
+    animation: tech-grid 20s linear infinite;
+  }
+  
+  /* Hover effects */
+  .hover-tech {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-tech:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-float);
+  }
+  
+  .hover-glow {
+    transition: var(--transition-smooth);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: var(--shadow-glow);
+    transform: scale(1.05);
+  }
+  
+  /* Glass effects */
+  .glass-tech {
+    background: hsl(240 6% 10% / 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid hsl(240 6% 20%);
+  }
+  
+  .glass-card {
+    background: hsl(240 6% 10% / 0.6);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(240 6% 25%);
+  }
+}
+
+@layer components {
+  /* Tech animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+  }
+  
+  @keyframes pulse-glow {
+    0% { 
+      box-shadow: 0 0 20px hsl(250 84% 65% / 0.3);
+    }
+    100% { 
+      box-shadow: 0 0 40px hsl(250 84% 65% / 0.6), 0 0 80px hsl(270 100% 85% / 0.3);
+    }
+  }
+  
+  @keyframes tech-grid {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50px); }
+  }
+  
+  /* Floating elements */
+  .floating-element {
+    position: absolute;
+    background: var(--gradient-tech);
+    border-radius: 50%;
+    filter: blur(1px);
+    animation: float 8s ease-in-out infinite;
+  }
+  
+  .floating-element:nth-child(2) {
+    animation-delay: -2s;
+    animation-duration: 10s;
+  }
+  
+  .floating-element:nth-child(3) {
+    animation-delay: -4s;
+    animation-duration: 12s;
+  }
+}
